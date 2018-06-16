@@ -31,18 +31,27 @@ export default StyleSheet.create({
       textAlign: 'center',
       marginBottom: 10
     },
-    buttonContainer: {
+    buttonSignUpContainer: {
       marginTop: 20
     },
     buttonSignUp: {
       backgroundColor: 'white',
       padding: 50
     },
-    buttonText:{
+    buttonSignUpText:{
       fontFamily: 'Montserrat',
       fontSize: 18,
       color: '#b4c935',
       fontWeight: 'bold'
-    }
+    },
+    buttonLogin:{
+      padding: 20
+    },
+    buttonLoginText:{
+      fontFamily: 'Montserrat',
+      fontSize: 16,
+      color: 'white',
+      fontWeight: '300',
+    },
   });
   
