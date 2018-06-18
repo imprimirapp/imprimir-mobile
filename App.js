@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
-import { View } from 'native-base';
-import styles from './styles/homeStyles'
-import Home from './Home';
+import HomeScreen from './components/Home';
+import LoginScreen from './components/Login'
+import { StackNavigator } from 'react-navigation';
+
+const RootStack = StackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+    },
+    Login: {
+      screen: LoginScreen,
+    },
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
 
 export default class App extends Component {
+
   render(){
-    return(
-      <View style={styles.container}>
-        <Home />
-      </View>
-    )
+    return <RootStack />;
   }
 }
