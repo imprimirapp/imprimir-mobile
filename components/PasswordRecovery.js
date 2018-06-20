@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, Text, Button } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { Container, Content, Form, Item, Input, Icon } from 'native-base';
 import styles from '../styles/passwordrecoveryStyles'
-
+import Button from 'react-native-button';
 
 
 export default class PasswordRecoveryScreen extends Component {
@@ -40,8 +40,14 @@ export default class PasswordRecoveryScreen extends Component {
                         <Input value={this.state.value} placeholder="Email" onChange={this.handleInputChange} style={styles.input}/>
                         </Item>
                         <View style={styles.buttonPwContainer}>
-                        <Button title="Enviar" disabled={this.state.disabled} color='#b4c935' onPress={() => this.props.navigation.push('Login')}>
-                            <Text style={styles.buttonPwText}>Enviar</Text>
+                        <Button title="Enviar" 
+                            style={styles.buttonPwTextEnabled}
+                            styleDisabled={styles.buttonPwTextDisabled}
+                            disabled={this.state.disabled}
+                            containerStyle={styles.buttonStyleEnabled}
+                            disabledContainerStyle={styles.buttonStyleDisabled}  
+                            onPress={() => this.props.navigation.push('Login')}>
+                            Enviar
                         </Button>
                     </View>
                     </Form>

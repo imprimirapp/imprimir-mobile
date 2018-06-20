@@ -37,10 +37,24 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    buttonPwText:{
+    buttonPwTextEnabled:{
         fontFamily: 'Montserrat',
         fontSize: 18,
         color: 'white',
         fontWeight: 'bold'
+    },
+    buttonStyleEnabled:{
+        padding: 20, 
+        overflow: 'hidden',
+        backgroundColor: '#b4c935',
+    },
+    buttonPwTextDisabled:{
+        fontFamily: 'Montserrat',
+        fontSize: 18,
+        color: '#303335',
+        fontWeight: 'bold'
+    },
+    buttonStyleDisabled:{
+        backgroundColor: '#f2f2f2'
     }
 });
