@@ -26,7 +26,7 @@ export default class PresignupScreen extends Component {
                     </Button>
                 </View>
                 <View style={styles.buttonPresignupContainer}>
-                    <Button style={styles.buttonPresignup}>
+                    <Button style={styles.buttonPresignup} onPress={() => this.props.navigation.push('Signup')}>
                         <Text style={styles.buttonPresignupText}>Regístrate</Text>
                     </Button>
                 </View>

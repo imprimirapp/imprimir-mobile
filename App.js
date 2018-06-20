@@ -3,6 +3,7 @@ import HomeScreen from './components/Home';
 import LoginScreen from './components/Login';
 import PresignupScreen from './components/Presignup';
 import PasswordRecoveryScreen from './components/PasswordRecovery';
+import SignupScreen from './components/Signup';
 import { StackNavigator } from 'react-navigation';
 
 const RootStack = StackNavigator(
@@ -18,6 +19,9 @@ const RootStack = StackNavigator(
     },
     PasswordRecovery:{
       screen: PasswordRecoveryScreen
+    },
+    Signup:{
+      screen: SignupScreen
     }
   },
   {
