@@ -32,12 +32,12 @@ static navigationOptions = {
                 </View>
             </Content>
             <View style={styles.allButtonsTransparentContainer}>
-                <Button transparent style={styles.buttonTransparent} onPress={() => this.props.navigation.push('Home')}>
+                <Button transparent style={styles.buttonTransparent} onPress={() => this.props.navigation.push('PasswordRecovery')}>
                     <Text style={styles.buttonRecoveryText}>¿Olvidaste tu contraseña? Haz clic aquí</Text>
                 </Button>
             </View>
             <View style={styles.allButtonsTransparentContainer}>
-                <Button transparent style={styles.buttonTransparent} onPress={() => this.props.navigation.push('Home')}>
+                <Button transparent style={styles.buttonTransparent} onPress={() => this.props.navigation.push('Presignup')}>
                     <Text style={styles.buttonSignupText}>¿Aún no tienes una cuenta? Regístrate aquí</Text>
                 </Button>
             </View>
