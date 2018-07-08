@@ -3,8 +3,26 @@ import HomeScreen from './components/Home';
 import LoginScreen from './components/Login';
 import PresignupScreen from './components/Presignup';
 import PasswordRecoveryScreen from './components/PasswordRecovery';
+import DashboardScreen from './components/Dashboard';
 import SignupScreen from './components/Signup';
 import { StackNavigator } from 'react-navigation';
+//REDUX / REDUX SAGA IMPLEMENTATION
+import createSagaMiddleware from 'redux-saga';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
+import reducers from './reducers'
+//Sagas
+import loginSaga from './sagas/loginSaga';
+
+const sagaMiddleware = createSagaMiddleware()
+
+const middleware = applyMiddleware(
+  sagaMiddleware
+);
+
+const store = createStore(reducers, middleware);
+sagaMiddleware.run(loginSaga);
+
 
 const RootStack = StackNavigator(
   {
@@ -22,6 +40,9 @@ const RootStack = StackNavigator(
     },
     Signup:{
       screen: SignupScreen
+    },
+    Dashboard:{
+      screen: DashboardScreen
     }
   },
   {
@@ -29,10 +50,15 @@ const RootStack = StackNavigator(
   }
 );
 
+  
 
 export default class App extends Component {
 
   render(){
-    return <RootStack />;
+    return (
+      <Provider store={store}>
+        <RootStack />
+      </Provider> 
+    )
   }
 }
