@@ -9,36 +9,37 @@ export default class SignupScreen extends Component {
 static navigationOptions = {
     header: null
 };
-  
+
   render() {
     return (
         <Container style={styles.containerSignup}>
-           <Image style={styles.imprimirLogo} source={require('../assets/images/imprimir-png-verde.png')} /> 
-           <Content style={styles.signupForm}>
-                <Form> 
-                    <Item>
+           <Image style={styles.imprimirLogo} source={require('../assets/images/imprimir-png-verde.png')} />
+           <View style={styles.signupForm}>
+                <Form style={{width:300}}>
+                    <View style={styles.field}>
                         <Icon type="FontAwesome" name="user" style={styles.iconSignup}/>
-                        <Input placeholder="Usuario"/>
-                    </Item>
-                    <Item>
+                        <Input style={styles.input} placeholder="Usuario"/>
+                    </View>
+                    <View style={styles.field}>
                         <Icon type="FontAwesome" name="envelope" style={styles.iconSignup}/>
-                        <Input placeholder="Correo"/>
-                    </Item>
-                    <Item>
+                        <Input style={styles.input} placeholder="Correo"/>
+                    </View>
+                    <View style={styles.field}>
                         <Icon type="FontAwesome" name="lock" style={styles.iconSignup}/>
-                        <Input placeholder="Contraseña" secureTextEntry={true}/>
-                    </Item>
-                    <Item>
+                        <Input style={styles.input} placeholder="Contraseña" secureTextEntry={true}/>
+                    </View>
+                    <View style={styles.field}>
                         <Icon type="FontAwesome" name="lock" style={styles.iconSignup}/>
-                        <Input placeholder="Repetir Contraseña" secureTextEntry={true}/>
-                    </Item>
+                        <Input style={styles.input} placeholder="Repetir Contraseña" secureTextEntry={true}/>
+                    </View>
                 </Form>
                 <View style={styles.buttonSignupContainer}>
                     <Button style={styles.buttonSignup}>
                         <Text style={styles.buttonSignupText}>Entrar</Text>
                     </Button>
+                    <Text>Acepto las condiciones</Text>
                 </View>
-            </Content>
+            </View>
         </Container>
 
     );

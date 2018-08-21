@@ -3,9 +3,12 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: '#b4c935',
+    },
+    carousel:{
+      marginTop:50
     },
     contentContainer: {
       flex: 1,
@@ -22,10 +25,11 @@ export default StyleSheet.create({
       width: 240,
       marginBottom: -20,
       resizeMode: 'contain',
+      marginTop:20
     },
     texts:{
       fontFamily: 'Montserrat',
-      fontWeight: '300',
+      fontWeight: '600',
       fontSize: 24,
       color: 'white',
       textAlign: 'center',
@@ -35,11 +39,12 @@ export default StyleSheet.create({
       marginTop: 20
     },
     buttonSignUp: {
-      backgroundColor: 'white',
+      backgroundColor:'white',
+      height:60,
       padding: 50
     },
     buttonSignUpText:{
-      fontFamily: 'Montserrat',
+      fontFamily: "Montserrat",
       fontSize: 18,
       color: '#b4c935',
       fontWeight: 'bold'
@@ -54,4 +59,3 @@ export default StyleSheet.create({
       fontWeight: '300',
     },
   });
-  

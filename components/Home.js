@@ -25,6 +25,7 @@ export default class HomeScreen extends Component {
               indicatorColor="white"
               inactiveIndicatorColor='#7f8487'
               indicatorSpace={20}
+              style={styles.carousel}
               >
               <View style={styles.contentContainer}>
                 <Text style={styles.texts}>Diseña como{"\n"}un experto{"\n"}desde casa</Text>
@@ -35,16 +36,18 @@ export default class HomeScreen extends Component {
                 <Image style={styles.imageItem} source={require('../assets/images/flyers.png')} />
               </View>
             </Carousel>
+
             <Content style={styles.buttonSignUpContainer}>
               <Button style={styles.buttonSignUp} onPress={() => this.props.navigation.push('Presignup')}>
                 <Text style={styles.buttonSignUpText}>Crea una cuenta</Text>
               </Button>
             </Content>
+
             <Content>
               <Button transparent style={styles.buttonLogin} onPress={() => this.props.navigation.push('Login')}>
                 <Text style={styles.buttonLoginText}>¿Ya tienes una cuenta? Entra aquí</Text>
               </Button>
-            </Content> 
+            </Content>
         </View>
     );
   }

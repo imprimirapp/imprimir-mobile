@@ -11,6 +11,7 @@ export default StyleSheet.create({
         backgroundColor: 'white',
         padding: 20,
         alignItems: 'center',
+        justifyContent:'space-between'
       },
       buttonSignupContainer: {
         marginTop: 40,
@@ -24,8 +25,13 @@ export default StyleSheet.create({
         justifyContent: 'center',
       },
       buttonSignup: {
+        margin:'auto',
+        width:250,
+        height:60,
+        alignSelf:'center',
         backgroundColor: '#b4c935',
-        padding: 50
+        padding:5,
+        justifyContent:'center'
       },
       buttonSignupText:{
         fontFamily: 'Montserrat',
@@ -34,7 +40,7 @@ export default StyleSheet.create({
         fontWeight: 'bold'
       },
       signupForm:{
-        marginTop: 40
+        marginTop: 20
       },
       buttonTransparent:{
         padding: 10
@@ -49,7 +55,19 @@ export default StyleSheet.create({
       iconSignup:{
         fontFamily: 'Montserrat',
         fontSize: 18,
-        color: '#b4c935',
+        color: '#000',
         fontWeight: 'bold'
     },
+
+    field:{
+      width:'100%',
+      height:60,
+      borderWidth:1,
+      borderColor:'#000',
+      marginTop:20,
+      borderRadius:200,
+      flexDirection:'row',
+      alignItems:'center',
+      paddingHorizontal:20
+    }
 });

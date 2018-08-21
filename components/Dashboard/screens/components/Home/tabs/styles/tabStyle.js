@@ -1,0 +1,42 @@
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
+  box:{
+    width:'auto',
+    height:160,
+    backgroundColor:'#fff',
+    marginTop:10,
+    padding:10,
+  },
+  boxActivity:{
+    backgroundColor:'#fff',
+    padding:20,
+  },
+  container:{
+    padding:12,
+    backgroundColor:'#eee',
+  },
+  boxTitle:{
+    color:'#000'
+  },
+  boxDescription:{
+    display:'flex',
+  },
+  points:{
+    alignSelf:'flex-end'
+  },
+  progress:{
+    backgroundColor:"#fff",
+    height:80,
+    padding:20,
+    position:'absolute',
+    bottom:0,
+    left:0,
+    right:0,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  progressPoints:{
+    alignSelf:'flex-end'
+  }
+})

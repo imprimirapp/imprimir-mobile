@@ -3,7 +3,11 @@ import HomeScreen from './components/Home';
 import LoginScreen from './components/Login';
 import PresignupScreen from './components/Presignup';
 import PasswordRecoveryScreen from './components/PasswordRecovery';
-import DashboardScreen from './components/Dashboard';
+import OpenDashboardScreen from './components/OpenDashboard';
+import DashboardScreen from './components/Dashboard/screens/Dashboard';
+import messageDashboard from './components/Dashboard/screens/MessageDashboard';
+
+
 import SignupScreen from './components/Signup';
 import { StackNavigator } from 'react-navigation';
 //REDUX / REDUX SAGA IMPLEMENTATION
@@ -27,7 +31,7 @@ sagaMiddleware.run(loginSaga);
 const RootStack = StackNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: OpenDashboardScreen,
     },
     Login: {
       screen: LoginScreen,
@@ -42,7 +46,13 @@ const RootStack = StackNavigator(
       screen: SignupScreen
     },
     Dashboard:{
-      screen: DashboardScreen
+      screen: OpenDashboardScreen
+    },
+    DashboardActivity:{
+      screen:DashboardScreen
+    },
+    messageDashboard:{
+      screen:messageDashboard
     }
   },
   {
@@ -50,7 +60,7 @@ const RootStack = StackNavigator(
   }
 );
 
-  
+
 
 export default class App extends Component {
 
@@ -58,7 +68,7 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <RootStack />
-      </Provider> 
+      </Provider>
     )
   }
 }
