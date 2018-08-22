@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import {
   Header,
   Body,
@@ -7,13 +8,13 @@ import {
   Icon,
   Title,
 } from 'native-base';
-import styles from '../../styles/dashboardActivityStyles';
+import styles from '../../styles/headerStyles';
 
 
 const HeaderDashboard = props => (
   <Header style={styles.header}>
     <Body>
-      <Title>{props.titleHeader}</Title>
+      <Title style={styles.titleHeader}>{props.titleHeader}</Title>
     </Body>
     <Right>
       <Button
@@ -22,6 +23,7 @@ const HeaderDashboard = props => (
         onPress={props.onPress}
         >
         <Icon name='menu' style={styles.icon}/>
+        <View style={styles.pointNotify}></View>
       </Button>
     </Right>
   </Header>
