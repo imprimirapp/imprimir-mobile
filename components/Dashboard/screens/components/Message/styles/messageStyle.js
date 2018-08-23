@@ -18,11 +18,12 @@ export default StyleSheet.create({
   },
   nameUser:{
     color:'#000',
-    fontFamily:'Montserrat',
+    fontFamily:'Montserrat-Regular',
     fontSize:15
   },
   messageDescription:{
     color:'#222',
-    fontSize:12
+    fontSize:12,
+    fontFamily:'Montserrat-Regular'
   }
 });

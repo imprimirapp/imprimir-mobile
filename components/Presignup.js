@@ -28,14 +28,14 @@ export default class PresignupScreen extends Component {
                     <Text style={styles.buttonPresignupText}>Regístrate con Google</Text>
               </Button>
 
-              <Button style={styles.buttonPresignup} onPress={() => this.props.navigation.push('Signup')}>
+              <Button style={styles.buttonPresignup} onPress={() => this.props.navigation.navigate('Signup')}>
                   <Icon name="user" style={[styles.buttonPresignupText,styles.button]}/>
                   <Text style={styles.buttonPresignupText}>Registrarse con Usuario</Text>
               </Button>
           </View>
 
           <View style={styles.allButtonsTransparentContainer}>
-              <Button transparent style={styles.buttonTransparent} onPress={() => this.props.navigation.push('Login')}>
+              <Button transparent style={styles.buttonTransparent} onPress={() => this.props.navigation.navigate('Login')}>
                   <Text style={styles.buttonLoginText}>¿Ya tienes cuenta? Ingresa aquí</Text>
               </Button>
           </View>

@@ -9,7 +9,8 @@ export default StyleSheet.create({
     zIndex:10
   },
   history:{
-    marginLeft:10
+    marginLeft:10,
+    alignItems:'center'
   },
   imgUser:{
     width:60,
@@ -17,6 +18,10 @@ export default StyleSheet.create({
     borderRadius:500,
     borderWidth:1,
     borderColor:'#b4c935'
+  },
+  userName:{
+    fontFamily:'Montserrat-Regular',
+    fontSize:10
   },
   button:{
     width:55,

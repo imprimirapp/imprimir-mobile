@@ -5,10 +5,12 @@ import {
   Text,
   FlatList
 } from 'react-native';
+import { Icon as IconBase } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import styles from '../../styles/menuStyle';
 import { Button } from 'native-base';
+
 
 const menuItems = [
   {
@@ -44,7 +46,10 @@ const Menu = props => (
       <Image style={styles.imgUser} source={require('../../assets/images/user_profile.jpg')}/>
       <View style={styles.infoUser}>
         <Text style={styles.nameUser}>Luis Castellanos</Text>
-        <Text style={styles.addressUser}> Medellín, Colombia</Text>
+        <View style={styles.contentAddress}>
+          <IconBase style={styles.iconAddress} name="md-pin" />
+          <Text style={styles.addressUser}>Medellín, Colombia </Text>
+        </View>
       </View>
     </View>
 
@@ -71,7 +76,7 @@ const Menu = props => (
         renderItem={({item}) => (
           <Button
             transparent
-            onPress={() => props.go.push(item.link)}
+            onPress={() => props.go.navigate(item.link)}
             style={styles.menuItem}
             >
           <Icon solid style={styles.menuItemIcon} name={item.icon}/>

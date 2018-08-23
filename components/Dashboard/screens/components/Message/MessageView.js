@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
-import { Tabs, Tab } from 'native-base';
+import { StyleSheet, View } from 'react-native';
+import { Tabs, Tab, Container } from 'native-base';
 
 import BuzonTab from './tabs/BuzonTab';
 import ArchivedTab from './tabs/ArchivedTab';
@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     backgroundColor:green
   },
   tabsTitle:{
-    color:'#fff'
+    color:'#fff',
+    fontFamily:'Montserrat-Regular'
   }
 })
 
@@ -25,24 +26,26 @@ class MessageView extends Component {
 
   render(){
     return(
-      <Tabs locked={true}>
-        <Tab
-          tabStyle={styles.tabs}
-          textStyle={styles.tabsTitle}
-          activeTabStyle={styles.tabs}
-          heading="Buzón">
+      <View style={{flex:1}}>
+        <Tabs locked={true}>
+          <Tab
+            tabStyle={styles.tabs}
+            textStyle={styles.tabsTitle}
+            activeTabStyle={styles.tabs}
+            heading="Buzón">
 
-          <BuzonTab/>
-        </Tab>
+            <BuzonTab/>
+          </Tab>
 
-        <Tab
-          tabStyle={styles.tabs}
-          textStyle={styles.tabsTitle}
-          activeTabStyle={styles.tabs}
-          heading="Archivados">
-          <ArchivedTab />
-        </Tab>
-      </Tabs>
+          <Tab
+            tabStyle={styles.tabs}
+            textStyle={styles.tabsTitle}
+            activeTabStyle={styles.tabs}
+            heading="Archivados">
+            <ArchivedTab />
+          </Tab>
+        </Tabs>
+      </View>
     )
   }
 

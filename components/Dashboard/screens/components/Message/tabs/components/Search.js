@@ -10,7 +10,7 @@ import styles from '../../styles/BuzonTabStyle';
 const Search = props => (
   <ViewShadow >
     <Item style={styles.searchField}>
-      <Input  placeholder="Buscar..." />
+      <Input   placeholder="Buscar..." />
       <Button transparent style={styles.searchButton}>
         <Icon name="ios-search" />
       </Button>

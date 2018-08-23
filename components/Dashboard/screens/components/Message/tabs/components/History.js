@@ -55,7 +55,7 @@ const History = props => (
               <View style={styles.history}>
                 <TouchableOpacity>
                   <Image style={styles.imgUser} source={{uri:item.img}} />
-                  <Text>{item.userName}</Text>
+                  <Text style={styles.userName}>{item.userName}</Text>
                 </TouchableOpacity>
               </View>
           )}

@@ -35,7 +35,7 @@ static navigationOptions = {
                 </Form>
                 <View style={styles.buttonSignupContainer}>
                     <Button style={styles.buttonSignup}>
-                        <Text style={styles.buttonSignupText}>Entrar</Text>
+                        <Text style={styles.buttonSignupText}>Registrarse</Text>
                     </Button>
                     <Text>Acepto las condiciones</Text>
                 </View>

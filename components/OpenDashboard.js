@@ -21,7 +21,7 @@ static navigationOptions = {
            </View>
 
           <View>
-            <Button style={styles.button} onPress={() => this.props.navigation.push('DashboardActivity')}>
+            <Button style={styles.button} onPress={() => this.props.navigation.navigate('DashboardActivity')}>
               <Text style={styles.buttonText}>Mi Dashboard</Text>
             </Button>
 

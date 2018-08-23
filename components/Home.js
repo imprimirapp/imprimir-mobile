@@ -44,7 +44,7 @@ export default class HomeScreen extends Component {
             </Content>
 
             <Content>
-              <Button transparent style={styles.buttonLogin} onPress={() => this.props.navigation.push('Login')}>
+              <Button transparent style={styles.buttonLogin} onPress={() => this.props.navigation.navigate('Login')}>
                 <Text style={styles.buttonLoginText}>¿Ya tienes una cuenta? Entra aquí</Text>
               </Button>
             </Content>

@@ -31,7 +31,7 @@ sagaMiddleware.run(loginSaga);
 const RootStack = StackNavigator(
   {
     Home: {
-      screen: OpenDashboardScreen,
+      screen: DashboardScreen,
     },
     Login: {
       screen: LoginScreen,

@@ -5,7 +5,7 @@ const colorNav = '#2D3336',
 
 export default StyleSheet.create({
   Navbar:{
-    width:300,
+    width:290,
     flex:1,
     backgroundColor:colorNav,
   },
@@ -22,14 +22,31 @@ export default StyleSheet.create({
     resizeMode:'contain'
   },
   infoUser:{
-    paddingLeft:20
+    paddingLeft:20,
+    justifyContent:'center',
+  },
+  contentAddress:{
+   flexDirection:'row',
+   justifyContent:'center',
+   alignItems:'center'
   },
   nameUser:{
     color:'#fff',
     textAlign:'center',
     fontSize:22,
-    fontFamily:'Montserrat',
     fontWeight:'700',
+    fontFamily:'Montserrat-Regular '
+  },
+  addressUser:{
+    color:textColor,
+    textAlign:'center',
+    fontSize:15,
+    fontFamily:'Montserrat-Regular'
+  },
+  iconAddress:{
+    color:textColor,
+    fontSize:15,
+    marginRight:6
   },
   NavbarlevelRank:{
     backgroundColor:'#282A2B',
@@ -44,7 +61,7 @@ export default StyleSheet.create({
   },
   freelance:{
     color:'#6CA31E',
-    fontFamily:'Montserrat',
+    fontFamily:'Montserrat-Regular',
     textAlign:'center',
     fontSize:22,
     marginTop:10,
@@ -62,7 +79,8 @@ export default StyleSheet.create({
   master:{
     color:textColor,
     fontSize:20,
-    fontWeight:'300'
+    fontWeight:'300',
+    fontFamily:'Montserrat-Regular'
   },
   menu:{
     marginTop:50
@@ -73,7 +91,8 @@ export default StyleSheet.create({
   menuItemText:{
     color:textColor,
     marginLeft:12,
-    fontSize:16
+    fontSize:16,
+    fontFamily:'Montserrat-Regular'
   },
   menuItemIcon:{
     color:textColor,
