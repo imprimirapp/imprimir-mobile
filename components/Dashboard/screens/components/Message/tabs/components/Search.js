@@ -4,15 +4,16 @@ import { Item, Button, Icon, Input } from 'native-base';
 import ViewShadow from '../../../../../widgets/ViewShadow';
 
 import styles from '../../styles/BuzonTabStyle';
+import styled from 'styled-components';
 
 
 
 const Search = props => (
   <ViewShadow >
     <Item style={styles.searchField}>
-      <Input   placeholder="Buscar..." />
+      <Input style={styles.field}  placeholder="Buscar..." />
       <Button transparent style={styles.searchButton}>
-        <Icon name="ios-search" />
+        <Icon style={styles.icon} name="ios-search" />
       </Button>
     </Item>
   </ViewShadow>

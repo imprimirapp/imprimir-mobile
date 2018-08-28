@@ -36,7 +36,7 @@ class DashboardLayout extends Component {
     Animated.timing(
       this.state.contentToLeft,
       {
-        toValue:400,
+        toValue:800,
         easing:Easing.in(),
         duration:250
       }
@@ -71,19 +71,6 @@ class DashboardLayout extends Component {
       >
         <Container>
 
-          {/* <Animated.View
-            style={{
-              left:this.state.leftMenu,
-              position:'absolute',
-              top:0,
-              bottom:0,
-              width:'80%'
-            }}
-          >
-            <Menu
-              closeMenu={this.closeMenu}
-            />
-          </Animated.View> */}
 
 
             <HeaderDashboard

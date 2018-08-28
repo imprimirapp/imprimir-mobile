@@ -6,7 +6,7 @@ import PasswordRecoveryScreen from './components/PasswordRecovery';
 import OpenDashboardScreen from './components/OpenDashboard';
 import DashboardScreen from './components/Dashboard/screens/Dashboard';
 import messageDashboard from './components/Dashboard/screens/MessageDashboard';
-import MessageConversation from './components/Dashboard/screens/MessageConversation';
+import ChatScreen  from './components/Dashboard/screens/Chat';
 
 import Menu from './components/Dashboard/Menu';
 
@@ -33,7 +33,7 @@ sagaMiddleware.run(loginSaga);
 const RootStack = createStackNavigator(
   {
     Home:{
-      screen:MessageConversation
+      screen:HomeScreen
     },
     Login: {
       screen: LoginScreen,
@@ -57,7 +57,7 @@ const RootStack = createStackNavigator(
       screen:messageDashboard
     },
     conversation:{
-      screen:MessageConversation
+      screen:ChatScreen
     }
   },
   {

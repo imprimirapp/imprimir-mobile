@@ -21,7 +21,7 @@ export default StyleSheet.create({
     width:300,
     height:300,
     backgroundColor:'#fff',
-    borderRadius:300 / PixelRatio.get(),
+    borderRadius:300 / 2,
     display:'flex',
     justifyContent:'center',
     alignItems:'center',

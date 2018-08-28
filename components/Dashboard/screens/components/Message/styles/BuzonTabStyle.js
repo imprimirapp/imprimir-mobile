@@ -15,6 +15,9 @@ export default StyleSheet.create({
   searchField:{
     borderBottomColor:'transparent'
   },
+  field:{
+    fontFamily:'Montserrat-Regular'
+  },
   searchButton:{
     borderLeftWidth:0.5,
     borderColor:'#ccc',
@@ -23,6 +26,9 @@ export default StyleSheet.create({
     height:'100%',
     width:60,
     paddingVertical:5
+  },
+  icon:{
+    color:"#9A9A9A"
   }
 
 });

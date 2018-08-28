@@ -16,25 +16,25 @@ import styles from '../../styles/historyStyle';
 const history = [
   {
     img:'https://s3.amazonaws.com/uifaces/faces/twitter/geran7/128.jpg',
-    userName:'Maria Jose',
+    userName:'Orland Kertz',
     message:'Lorem ipsum dolor sit amet const.',
     key:'0'
   },
   {
     img:'https://s3.amazonaws.com/uifaces/faces/twitter/nateschulte/128.jpg',
-    userName:'Maria Jose',
+    userName:'Jabari Schuster',
     message:'Lorem ipsum dolor sit amet const.',
     key:'1'
   },
   {
     img:'https://s3.amazonaws.com/uifaces/faces/twitter/rehatkathuria/128.jpg',
-    userName:'Maria Jose',
+    userName:'Rodger Spencer',
     message:'Lorem ipsum dolor sit amet const.',
     key:'2'
   },
   {
     img:'https://s3.amazonaws.com/uifaces/faces/twitter/craighenneberry/128.jpg',
-    userName:'Maria Jose',
+    userName:'Lonie Klein',
     message:'Lorem ipsum dolor sit amet const.',
     key:'3'
   },

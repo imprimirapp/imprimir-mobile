@@ -7,26 +7,26 @@ import Message from './Message';
 
 const messages = [
   {
-    img:'../../../../../../../assets/images/user_profile.jpg',
-    userName:'Maria Jose',
+    img:'https://s3.amazonaws.com/uifaces/faces/twitter/geran7/128.jpg',
+    userName:'Orland Kertz',
     message:'Lorem ipsum dolor sit amet const.',
     key:'0'
   },
   {
-    img:'userImg',
-    userName:'Maria Jose',
+    img:'https://s3.amazonaws.com/uifaces/faces/twitter/nateschulte/128.jpg',
+    userName:'Jabari Schuster',
     message:'Lorem ipsum dolor sit amet const.',
     key:'1'
   },
   {
-    img:'userImg',
-    userName:'Maria Jose',
+    img:'https://s3.amazonaws.com/uifaces/faces/twitter/rehatkathuria/128.jpg',
+    userName:'Rodger Spencer',
     message:'Lorem ipsum dolor sit amet const.',
     key:'2'
   },
   {
-    img:'userImg',
-    userName:'Maria Jose',
+    img:'https://s3.amazonaws.com/uifaces/faces/twitter/craighenneberry/128.jpg',
+    userName:'Lonie Klein',
     message:'Lorem ipsam dolor sit amet const.',
     key:'3'
   }

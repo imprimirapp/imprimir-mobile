@@ -8,9 +8,12 @@ import styles from '../../styles/messageStyle';
 
 const Message = props => (
   <ViewShadow>
-    <Button style={styles.contentMessage} transparent onPress={() => props.navigation.navigate('conversation')}>
+    <Button style={styles.contentMessage} transparent onPress={() => props.navigation.navigate('conversation',{
+      img:props.img,
+      userName:props.userName
+    })}>
       <View style={styles.message} >
-        <Image style={styles.img} source={require('../../../../../../../assets/images/user_profile.jpg')} />
+        <Image style={styles.img} source={{uri:props.img}} />
         <View style={styles.infoMessage}>
           <Text style={styles.nameUser}>{props.userName}</Text>
           <Text style={styles.messageDescription}>{props.message}</Text>
