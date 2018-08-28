@@ -1,38 +1,37 @@
 import React, { Component } from 'react';
-import { Animated, View, Easing } from 'react-native';
+import {
+  Animated,
+  Easing,
+  Alert
+} from 'react-native';
 import { Container, Drawer } from 'native-base';
-
-
+import { withNavigation} from 'react-navigation';
 
 import HeaderDashboard from './Header';
+/* import Drawer from 'react-native-drawer'; */
 import Menu from './Menu';
 
 import { styles, drawerStyles } from '../../styles/drawerStyles';
 
 
-export default class DashboardLayout extends Component {
+class DashboardLayout extends Component {
 
 
   static navigationOptions = {
-    header: null
+    header: null,
   };
 
 
 
   state = {
-    left:new Animated.Value(-1000),
-    contentToLeft:new Animated.Value(0)
+    contentToLeft:new Animated.Value(0),
+    /* openMenu:false,
+    leftMenu:new Animated.Value(-1000) */
   }
+
 
   openMenu = () => {
     this.drawer._root.open()
-  }
-
-  closeMenu = () => {
-    this.drawer._root.close()
-  }
-
-  handleContentToLeft = () => {
 
     Animated.timing(
       this.state.contentToLeft,
@@ -41,10 +40,14 @@ export default class DashboardLayout extends Component {
         easing:Easing.in(),
         duration:250
       }
-    ).start()
+    ).start();
+
   }
 
-  handleCloseContentToLeft = () => {
+  closeMenu = () => {
+
+    this.drawer._root.close();
+
     Animated.timing(
       this.state.contentToLeft,
       {
@@ -53,21 +56,36 @@ export default class DashboardLayout extends Component {
         duration:250
       }
     ).start()
-
   }
+
 
   render(){
     return (
-        <Drawer
-          ref={(ref) => {this.drawer = ref;}}
-          content={<Menu navigator={this.navigator} go={this.props.children.props.go} />}
-          onClose={() => this.closeMenu()}
-          styles={drawerStyles}
-          onOpenStart={this.handleContentToLeft}
-          onCloseStart={this.handleCloseContentToLeft}
-          tweenDuration={250}
-        >
-          <Container style={this.props.style}>
+      <Drawer
+        ref={(ref) => this.drawer = ref}
+        content={<Menu closeMenu={this.closeMenu}/>}
+        onClose={this.closeMenu}
+        style={drawerStyles}
+        openDrawerOffset={0.2}
+        tweenDuration={250}
+      >
+        <Container>
+
+          {/* <Animated.View
+            style={{
+              left:this.state.leftMenu,
+              position:'absolute',
+              top:0,
+              bottom:0,
+              width:'80%'
+            }}
+          >
+            <Menu
+              closeMenu={this.closeMenu}
+            />
+          </Animated.View> */}
+
+
             <HeaderDashboard
                 onPress={this.openMenu}
                 titleHeader={this.props.titleHeader}
@@ -83,12 +101,16 @@ export default class DashboardLayout extends Component {
               {this.props.children}
             </Animated.View>
           </Container>
-        </Drawer>
+      </Drawer>
+      )
+    }
 
-    )
   }
 
-}
 
+
+
+
+export default withNavigation(DashboardLayout);
 
 

@@ -14,7 +14,7 @@ export default class MessageDashboard extends Component{
       <DashboardLayout
         titleHeader={'Mensajes'}
       >
-        <MessageView go={this.props.navigation} />
+        <MessageView />
       </DashboardLayout>
     );
   }

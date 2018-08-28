@@ -1,6 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+  contentMessage:{
+    height:80
+  },
   message:{
     backgroundColor:'#fff',
     flexDirection:'row',
@@ -14,7 +17,7 @@ export default StyleSheet.create({
     height:70,
     resizeMode:'contain',
     borderRadius:500,
-    marginRight:40
+    marginRight:15
   },
   nameUser:{
     color:'#000',

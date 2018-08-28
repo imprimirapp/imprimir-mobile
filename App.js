@@ -6,10 +6,12 @@ import PasswordRecoveryScreen from './components/PasswordRecovery';
 import OpenDashboardScreen from './components/OpenDashboard';
 import DashboardScreen from './components/Dashboard/screens/Dashboard';
 import messageDashboard from './components/Dashboard/screens/MessageDashboard';
+import MessageConversation from './components/Dashboard/screens/MessageConversation';
 
+import Menu from './components/Dashboard/Menu';
 
 import SignupScreen from './components/Signup';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator  } from 'react-navigation';
 //REDUX / REDUX SAGA IMPLEMENTATION
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
@@ -28,10 +30,10 @@ const store = createStore(reducers, middleware);
 sagaMiddleware.run(loginSaga);
 
 
-const RootStack = StackNavigator(
+const RootStack = createStackNavigator(
   {
-    Home: {
-      screen: DashboardScreen,
+    Home:{
+      screen:MessageConversation
     },
     Login: {
       screen: LoginScreen,
@@ -53,16 +55,20 @@ const RootStack = StackNavigator(
     },
     messageDashboard:{
       screen:messageDashboard
+    },
+    conversation:{
+      screen:MessageConversation
     }
   },
   {
     initialRouteName: 'Home',
   }
-);
-
-
+)
 
 export default class App extends Component {
+
+
+
 
   render(){
     return (

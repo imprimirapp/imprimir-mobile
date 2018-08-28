@@ -1,13 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, PixelRatio } from 'react-native';
 
 const colorNav = '#2D3336',
       textColor = '#999999';
 
 export default StyleSheet.create({
   Navbar:{
-    width:290,
     flex:1,
+    width:'100%',
     backgroundColor:colorNav,
+    justifyContent:'space-between'
   },
   NavbarUserProfile:{
     flexDirection:'row',
@@ -16,13 +17,13 @@ export default StyleSheet.create({
     paddingVertical:15
   },
   imgUser:{
-    width:80,
-    height:80,
+    width:70,
+    height:70,
     borderRadius:500,
     resizeMode:'contain'
   },
   infoUser:{
-    paddingLeft:20,
+    paddingLeft:10,
     justifyContent:'center',
   },
   contentAddress:{
@@ -50,7 +51,7 @@ export default StyleSheet.create({
   },
   NavbarlevelRank:{
     backgroundColor:'#282A2B',
-    marginTop:20,
+    marginTop:-10,
     display:'flex',
     alignItems:'center'
   },
@@ -64,7 +65,7 @@ export default StyleSheet.create({
     fontFamily:'Montserrat-Regular',
     textAlign:'center',
     fontSize:22,
-    marginTop:10,
+    marginTop:5,
     fontWeight:'600'
   },
   rank:{
@@ -83,16 +84,19 @@ export default StyleSheet.create({
     fontFamily:'Montserrat-Regular'
   },
   menu:{
-    marginTop:50
+    marginTop:10
   },
   menuItem:{
-    padding:15
+    padding:15,
+    borderBottomColor:'#ccc',
+    borderBottomWidth:0.4
   },
   menuItemText:{
+    width:'100%',
     color:textColor,
     marginLeft:12,
     fontSize:16,
-    fontFamily:'Montserrat-Regular'
+    fontFamily:'Montserrat-Regular',
   },
   menuItemIcon:{
     color:textColor,
@@ -100,6 +104,15 @@ export default StyleSheet.create({
   },
   separator:{
     borderWidth:0.5
+  },
+  options:{
+    flexDirection:'row',
+    paddingLeft:5
+  },
+  iconOptions:{
+    color:textColor,
+    fontSize:20,
+    padding:10
   }
 
 });

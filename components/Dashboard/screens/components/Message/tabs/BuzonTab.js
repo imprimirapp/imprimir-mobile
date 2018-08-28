@@ -14,7 +14,7 @@ const BuzonTab = props => (
   <View style={{flex:1}}>
     <Container style={styles.container}>
       <Search />
-      <MessageList />
+      <MessageList/>
     </Container>
     <History />
   </View>

@@ -1,13 +1,17 @@
 import {StyleSheet} from 'react-native';
 
 const styles =  StyleSheet.create({
-
+  container:{
+    flex:1
+  }
 });
 
 const drawerStyles = {
   drawer:{
     shadowColor:'#fff',
-    shadowOpacity:0.1
+    shadowOpacity:0.1,
+    shadowRadius: 1,
+    width:'100%'
   }
 }
 

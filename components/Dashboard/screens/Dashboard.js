@@ -5,7 +5,6 @@ import Home from './components/Home/Home';
 
 
 
-
 export default class DashboardActivityScreen extends Component {
 
   static navigationOptions = {
@@ -17,7 +16,7 @@ export default class DashboardActivityScreen extends Component {
       <DashboardLayout
         titleHeader={'Dashboard'}
       >
-         <Home go={this.props.navigation} />
+         <Home />
       </DashboardLayout>
     );
   }

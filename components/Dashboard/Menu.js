@@ -8,8 +8,10 @@ import {
 import { Icon as IconBase } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+
 import styles from '../../styles/menuStyle';
 import { Button } from 'native-base';
+import { withNavigation } from 'react-navigation';
 
 
 const menuItems = [
@@ -41,7 +43,6 @@ const menuItems = [
 
 const Menu = props => (
   <View style={styles.Navbar}>
-
     <View style={styles.NavbarUserProfile}>
       <Image style={styles.imgUser} source={require('../../assets/images/user_profile.jpg')}/>
       <View style={styles.infoUser}>
@@ -76,18 +77,30 @@ const Menu = props => (
         renderItem={({item}) => (
           <Button
             transparent
-            onPress={() => props.go.navigate(item.link)}
+            onPress={() =>{
+              props.navigation.navigate(item.link)
+              props.closeMenu()
+            }}
             style={styles.menuItem}
             >
           <Icon solid style={styles.menuItemIcon} name={item.icon}/>
-            <Text style={styles.menuItemText}>{item.title}</Text>
+          <Text style={styles.menuItemText}>{item.title}</Text>
           </Button>
         )}
-        ItemSeparatorComponent={() => <View style={styles.separator}></View>}
+
       />
+    </View>
+
+    <View style={styles.options}>
+      <Button  transparent>
+        <Icon style={styles.iconOptions} solid name="power-off" />
+      </Button>
+      <Button transparent>
+        <Icon style={styles.iconOptions} solid name="cog" />
+      </Button>
     </View>
 
   </View>
 );
 
-export default Menu;
+export default withNavigation(Menu);

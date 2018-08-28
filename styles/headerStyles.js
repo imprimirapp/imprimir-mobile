@@ -4,10 +4,13 @@ const green = '#b4c935';
 
 export default StyleSheet.create({
   header:{
-    backgroundColor:green
+    backgroundColor:green,
+    position:'relative',
   },
   hamburguerButton:{
     backgroundColor:green,
+    position:'relative',
+    zIndex:99999
   },
   titleHeader:{
     fontFamily:'Montserrat-Regular'
