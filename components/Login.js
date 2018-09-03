@@ -20,28 +20,20 @@ constructor(props) {
     };
     //Functions
     this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
 }
 
 onChange(input, val) {
     this.setState({ [input]: val.nativeEvent.text });
 }
 
-onSubmit() {
-    const { email, password } = this.state;
-    const dispatch = this.props.dispatch(login(email, password));
-   //this.request();
+//When change the props
+componentWillReceiveProps(next_props){
+    console.log(next_props);
+    if(next_props.isLogged == true){
+        this.props.navigation.push('Dashboard') 
+    }
 }
 
-/*request(){
-    const success = this.props.dispatch());
-    console.log(success.type);
-    if(success.type === 'LOGIN_SUCCESS'){
-        return this.props.navigation.push('Dashboard');
-    } else {
-        return this.props.navigation.push('Login');
-    }
-}*/
 
 render() {
 
@@ -60,7 +52,7 @@ render() {
                     </Item>
                 </Form>
                 <View style={styles.buttonLoginContainer}>
-                    <Button style={styles.buttonLogin} onPress={this.onSubmit}>
+                    <Button style={styles.buttonLogin} onPress={()=>{this.props.onSubmit({email: this.state.email, password: this.state.password})}}>
                         <Text style={styles.buttonLoginText}>Entrar</Text>
                     </Button>
                 </View>
@@ -82,8 +74,17 @@ render() {
 }
 
 const mapStateToProps = (state) => ({
-    success: state.success,
-    error: state.error
+    success: state.login.success,
+    error: state.login.error,
+    isLogged: state.login.isLogged
 });
+
+const mapDispatchToProps = (dispatch)  => {
+    return {
+        onSubmit: (payload) => {
+            dispatch(login(payload.email, payload.password))
+        }
+    }
+};
   
-export default connect(mapStateToProps)(LoginScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);

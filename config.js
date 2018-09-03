@@ -1,2 +1,1 @@
-export const localhost = 'http://localhost:8000';
-export const heroku = 'https://imprimir-backend.herokuapp.com';
+export const hosting = 'https://us-central1-imprimir-backend-v2.cloudfunctions.net/fun';

@@ -1,11 +1,11 @@
 import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR} from '../actions'
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { heroku } from '../config';
+import { hosting } from '../config';
 
 function loginService(url, params = {}){
     
     return new Promise((resolve, reject) => {
-        return fetch(heroku+url,{
+        return fetch(hosting+url,{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -32,7 +32,7 @@ function* loginRequest({ payload: { email, password } }){
     };
 
     try { 
-        const data = yield call(loginService, '/user/login', options);
+        const data = yield call(loginService, '/auth/login', options);
         yield put({ type: LOGIN_SUCCESS, payload: data });
     } catch (error){
         yield put({ type: LOGIN_ERROR, payload: error });

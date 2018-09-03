@@ -23,6 +23,7 @@ const middleware = applyMiddleware(
 const store = createStore(reducers, middleware);
 sagaMiddleware.run(loginSaga);
 
+store.subscribe(() => console.log('current store:', store.getState()));
 
 const RootStack = StackNavigator(
   {
@@ -50,10 +51,7 @@ const RootStack = StackNavigator(
   }
 );
 
-  
-
 export default class App extends Component {
-
   render(){
     return (
       <Provider store={store}>
