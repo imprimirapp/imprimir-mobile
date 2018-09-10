@@ -3,21 +3,23 @@ import { View, Image, Text } from 'react-native';
 import { Container, Content, Form, Item, Input, Icon } from 'native-base';
 import styles from '../styles/passwordrecoveryStyles'
 import Button from 'react-native-button';
+import { connect } from 'react-redux';
+import { passwordRecovery } from '../actions/index';
 
 
-export default class PasswordRecoveryScreen extends Component {
+class PasswordRecoveryScreen extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            value: '',
+            email: '',
             disabled: true
         };
         this.handleInputChange = this.handleInputChange.bind(this); 
     };
 
     handleInputChange(e){
-        this.setState({value: e.nativeEvent.text});
+        this.setState({email: e.nativeEvent.text});
         console.log(e.nativeEvent.text);
         if(e.nativeEvent.text != ''){
             this.setState({disabled: false})
@@ -27,6 +29,12 @@ export default class PasswordRecoveryScreen extends Component {
     static navigationOptions = {
         header: null
     };
+
+    componentWillReceiveProps(next_props){
+        if(next_props.isEmailSent == true){
+            this.props.navigation.push('Home') 
+        }
+    }
       
     render() {
         return (
@@ -37,7 +45,7 @@ export default class PasswordRecoveryScreen extends Component {
                     <Form> 
                         <Item >
                         <Icon type="FontAwesome" name="envelope" style={styles.iconPw}/>
-                        <Input value={this.state.value} placeholder="Email" onChange={this.handleInputChange} style={styles.input}/>
+                        <Input value={this.state.email} placeholder="Email" onChange={this.handleInputChange} style={styles.input}/>
                         </Item>
                         <View style={styles.buttonPwContainer}>
                         <Button title="Enviar" 
@@ -46,7 +54,7 @@ export default class PasswordRecoveryScreen extends Component {
                             disabled={this.state.disabled}
                             containerStyle={styles.buttonStyleEnabled}
                             disabledContainerStyle={styles.buttonStyleDisabled}  
-                            onPress={() => this.props.navigation.push('Home')}>
+                            onPress={()=>{this.props.onSubmitPR({email: this.state.email})}}>
                             Enviar
                         </Button>
                     </View>
@@ -56,3 +64,17 @@ export default class PasswordRecoveryScreen extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    isEmailSent: state.passwordRecovery.isEmailSent
+});
+
+const mapDispatchToProps = (dispatch)  => {
+    return {
+        onSubmitPR: (payload) => {
+            dispatch(passwordRecovery(payload.email))
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PasswordRecoveryScreen);
