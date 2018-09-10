@@ -14,12 +14,10 @@ static navigationOptions = {
  
 constructor(props) {
     super(props);
-    //States
     this.state = { 
         email: '', 
         password: ''
     };
-    //Functions
     this.onChange = this.onChange.bind(this);
 }
 
@@ -27,12 +25,7 @@ onChange(input, val) {
     this.setState({ [input]: val.nativeEvent.text });
 }
 
-//Before change
-/*componentWillMount(){
-    console.log('PROPS BEFORE CHANGE', this.props);
-}*/
 
-//When change the props
 componentWillReceiveProps(next_props){
     if(next_props.isLogged == true){
         this.props.navigation.push('Dashboard') 
