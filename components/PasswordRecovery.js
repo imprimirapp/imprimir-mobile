@@ -46,7 +46,7 @@ export default class PasswordRecoveryScreen extends Component {
                             disabled={this.state.disabled}
                             containerStyle={styles.buttonStyleEnabled}
                             disabledContainerStyle={styles.buttonStyleDisabled}  
-                            onPress={() => this.props.navigation.push('Login')}>
+                            onPress={() => this.props.navigation.push('Home')}>
                             Enviar
                         </Button>
                     </View>

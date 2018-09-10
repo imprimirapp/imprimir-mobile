@@ -36,7 +36,7 @@ export default class HomeScreen extends Component {
               </View>
             </Carousel>
             <Content style={styles.buttonSignUpContainer}>
-              <Button style={styles.buttonSignUp} onPress={() => this.props.navigation.push('Presignup')}>
+              <Button style={styles.buttonSignUp} onPress={() => this.props.navigation.push('Signup')}>
                 <Text style={styles.buttonSignUpText}>Crea una cuenta</Text>
               </Button>
             </Content>

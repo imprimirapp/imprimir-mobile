@@ -12,4 +12,20 @@ export default StyleSheet.create({
         padding: 20,
         alignItems: 'center',
       },
+      buttonLogoutContainer: {
+        marginTop: 40,
+        padding: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      buttonLogout: {
+        backgroundColor: '#b4c935',
+        padding: 50
+      },
+      buttonLogoutText:{
+        fontFamily: 'Montserrat',
+        fontSize: 18,
+        color: 'white',
+        fontWeight: 'bold'
+      },
 });

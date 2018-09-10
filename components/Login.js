@@ -5,6 +5,7 @@ import styles from '../styles/loginStyles'
 import { connect } from 'react-redux';
 import { login } from '../actions/index';
 
+
 class LoginScreen extends Component {
 
 static navigationOptions = {
@@ -26,9 +27,13 @@ onChange(input, val) {
     this.setState({ [input]: val.nativeEvent.text });
 }
 
+//Before change
+/*componentWillMount(){
+    console.log('PROPS BEFORE CHANGE', this.props);
+}*/
+
 //When change the props
 componentWillReceiveProps(next_props){
-    console.log(next_props);
     if(next_props.isLogged == true){
         this.props.navigation.push('Dashboard') 
     }
@@ -63,7 +68,7 @@ render() {
                 </Button>
             </View>
             <View style={styles.allButtonsTransparentContainer}>
-                <Button transparent style={styles.buttonTransparent} onPress={() => this.props.navigation.push('Presignup')}>
+                <Button transparent style={styles.buttonTransparent} onPress={() => this.props.navigation.push('Signup')}>
                     <Text style={styles.buttonSignupText}>¿Aún no tienes una cuenta? Regístrate aquí</Text>
                 </Button>
             </View>
