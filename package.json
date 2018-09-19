@@ -7,14 +7,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "firebase": "^5.5.0",
     "native-base": "^2.5.1",
     "react": "16.3.1",
     "react-google-login": "^3.2.1",
     "react-native": "0.55.4",
     "react-native-button": "^2.3.0",
     "react-native-carousel-view": "^0.5.1",
-    "react-native-vector-icons": "^5.0.0",
     "react-native-fbsdk": "^0.8.0",
+    "react-native-vector-icons": "^5.0.0",
     "react-navigation": "^2.3.1",
     "react-redux": "^5.0.7",
     "react-watcher": "0.0.1",

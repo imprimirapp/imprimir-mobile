@@ -5,7 +5,6 @@ import styles from '../styles/loginStyles'
 import { connect } from 'react-redux';
 import { login } from '../actions/index';
 
-
 class LoginScreen extends Component {
 
 static navigationOptions = {

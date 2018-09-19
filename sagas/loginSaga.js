@@ -1,6 +1,7 @@
 import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR} from '../actions'
 import { call, put, takeLatest } from 'redux-saga/effects'
 import { hosting } from '../config';
+import auth from '../models/connection'
 
 function loginService(url, params = {}){
     
@@ -16,7 +17,12 @@ function loginService(url, params = {}){
         .then((response) => response.json())
         .then((json) => {
             if(json.status === 200){
-                return resolve(json.data)
+                let customToken = json.token;
+                let data = json.data;
+                auth.signInWithCustomToken(customToken).then(function(){
+                    console.log('Auth with Custom Token / Autenticado con Token Personalizado');
+                    resolve(data);
+                });
             } else {
                 return reject(json);
             }

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { View, Image, Text, Animated, Easing, Alert } from 'react-native';
+import { View, Text, Animated, Easing } from 'react-native';
 import styles from '../styles/dashboardStyles'
 import { Container, Button, Drawer } from 'native-base';
 import { connect } from 'react-redux';
 import { logout } from '../actions/index';
-import { withNavigation} from 'react-navigation';
 import HeaderDashboard from './Header';
 import Menu from './Menu';
-import { dstyles, drawerStyles } from '../styles/drawerStyles';
+import { drawerStyles } from '../styles/drawerStyles';
+import firebase from 'firebase';
+import auth from '../models/connection'
 
 class DashboardScreen extends Component {
 
@@ -50,6 +51,12 @@ closeMenu = () => {
       duration:250
     }
   ).start()
+}
+
+componentDidMount(){
+  auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => { 
+    console.log('Persistido')           
+  })
 }
 
 componentWillReceiveProps(next_props){
