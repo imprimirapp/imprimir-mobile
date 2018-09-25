@@ -4,6 +4,7 @@ import LoginScreen from './components/Login';
 import PasswordRecoveryScreen from './components/PasswordRecovery';
 import DashboardScreen from './components/Dashboard';
 import SignupScreen from './components/Signup';
+import MenuScreen from './components/Menu';
 import { StackNavigator } from 'react-navigation';
 //REDUX / REDUX SAGA IMPLEMENTATION
 import createSagaMiddleware from 'redux-saga';
@@ -36,6 +37,9 @@ const RootStack = StackNavigator(
     },
     Signup:{
       screen: SignupScreen
+    },
+    Menu: {
+      screen: MenuScreen
     },
     Dashboard:{
       screen: DashboardScreen

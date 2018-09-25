@@ -24,7 +24,6 @@ onChange(input, val) {
     this.setState({ [input]: val.nativeEvent.text });
 }
 
-
 componentWillReceiveProps(next_props){
     if(next_props.isLogged == true){
         this.props.navigation.push('Dashboard') 

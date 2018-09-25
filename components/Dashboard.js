@@ -3,9 +3,8 @@ import { View, Text, Animated, Easing } from 'react-native';
 import styles from '../styles/dashboardStyles'
 import { Container, Button, Drawer } from 'native-base';
 import { connect } from 'react-redux';
-import { logout } from '../actions/index';
 import HeaderDashboard from './Header';
-import Menu from './Menu';
+import MenuScreen from './Menu';
 import { drawerStyles } from '../styles/drawerStyles';
 import firebase from 'firebase';
 import auth from '../models/connection'
@@ -57,7 +56,10 @@ componentDidMount(){
   auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => { 
     console.log('Persistido')           
   })
+
+  console.log('DASHBOARD PROPS:', this.props)
 }
+
 
 componentWillReceiveProps(next_props){
   if(next_props.isLoggedOut == true){
@@ -71,7 +73,7 @@ componentWillReceiveProps(next_props){
     return (
       <Drawer
         ref={(ref) => this.drawer = ref}
-        content={<Menu closeMenu={this.closeMenu}/>}
+        content={<MenuScreen {...this.props} closeMenu={this.closeMenu}/>}
         onClose={this.closeMenu}
         style={drawerStyles}
         openDrawerOffset={0.2}
@@ -80,7 +82,7 @@ componentWillReceiveProps(next_props){
         <Container>
             <HeaderDashboard
                 onPress={this.openMenu}
-                titleHeader={this.props.titleHeader}
+                titleHeader={this.titleHeader}
               />
 
             <Animated.View
@@ -92,28 +94,10 @@ componentWillReceiveProps(next_props){
             >
               {this.props.children}
             </Animated.View>
-            <View style={styles.containerDashboard}>
-              <Button style={styles.buttonLogout}  onPress={()=>{this.props.onLogout()}}>
-                  <Text style={styles.buttonLogoutText}>Salir</Text>
-              </Button> 
-            </View>
           </Container>
       </Drawer>
     );
   }
 }
-
-const mapStateToProps = (state) => ({
-  isLoggedOut: state.logout.isLoggedOut
-});
-
-const mapDispatchToProps = (dispatch)  => {
-  return {
-      onLogout: () => {
-          dispatch(logout())
-      }
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardScreen);
+export default connect(null, null)(DashboardScreen);
 
