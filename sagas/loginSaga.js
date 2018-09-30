@@ -1,34 +1,6 @@
 import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR} from '../actions'
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { hosting } from '../config';
-import auth from '../models/connection'
-
-function loginService(url, params = {}){
-    
-    return new Promise((resolve, reject) => {
-        return fetch(hosting+url,{
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(params)
-        })
-        .then((response) => response.json())
-        .then((json) => {
-            if(json.status === 200){
-                let customToken = json.token;
-                let data = json.data;
-                auth.signInWithCustomToken(customToken).then(function(){
-                    console.log('Auth with Custom Token / Autenticado con Token Personalizado');
-                    resolve(data);
-                });
-            } else {
-                return reject(json);
-            }
-        })
-    });
-}
+import loginService from '../services/loginService'
 
 function* loginRequest({ payload: { email, password } }){
     

@@ -1,28 +1,6 @@
 import {SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_ERROR} from '../actions'
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { hosting } from '../config';
-
-function signupService(url, params = {}){
-    
-    return new Promise((resolve, reject) => {
-        return fetch(hosting+url,{
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(params)
-        })
-        .then((response) => response.json())
-        .then((json) => {
-            if(json.status === 200){
-                return resolve(json)
-            } else {
-                return reject(json);
-            }
-        })
-    });
-}
+import signupService from '../services/signupService'
 
 function* signupRequest({ payload: { username, email, password } }){
     
