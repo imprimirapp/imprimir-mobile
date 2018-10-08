@@ -3,13 +3,30 @@ import { View, Image, Text } from 'react-native';
 import { Button, Content } from 'native-base';
 import Carousel from 'react-native-carousel-view';
 import styles from '../styles/homeStyles'
-
+import getCurrenUserService from '../services/getCurrentUserService'
 
 export default class HomeScreen extends Component {
 
   static navigationOptions = {
     header: null
   };
+
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillMount(){
+
+    getCurrenUserService().then((data) =>{
+      console.log(data);
+      if(data){
+        this.props.navigation.push('Dashboard', {
+          userParam: data
+        })
+      }
+    }); 
+  }
+
 
   render() {
     return (

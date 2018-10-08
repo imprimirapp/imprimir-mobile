@@ -68,7 +68,7 @@ class MenuScreen extends Component {
           <View style={styles.NavbarUserProfile}>
             <Image style={styles.imgUser} source={require('../assets/images/userprofile.jpg')}/>
             <View style={styles.infoUser}>
-              <Text style={styles.nameUser}>{this.props.success.displayName}</Text>
+              <Text style={styles.nameUser}>{this.props.success != null ? this.props.success.displayName : this.props.navigation.state.params.userParam.name}</Text>
               <View style={styles.contentAddress}>
                 <IconBase style={styles.iconAddress} name="md-pin" />
                 <Text style={styles.addressUser}>Medellín, Colombia </Text>

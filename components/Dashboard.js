@@ -6,8 +6,7 @@ import { connect } from 'react-redux';
 import HeaderDashboard from './Header';
 import MenuScreen from './Menu';
 import { drawerStyles } from '../styles/drawerStyles';
-import firebase from 'firebase';
-import auth from '../models/connection'
+
 
 class DashboardScreen extends Component {
 
@@ -50,14 +49,6 @@ closeMenu = () => {
       duration:250
     }
   ).start()
-}
-
-componentDidMount(){
-  auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => { 
-    console.log('Persistido')           
-  })
-
-  console.log('DASHBOARD PROPS:', this.props)
 }
 
 
