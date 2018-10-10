@@ -3,7 +3,6 @@ import { View, Image, Text } from 'react-native';
 import { Button, Content } from 'native-base';
 import Carousel from 'react-native-carousel-view';
 import styles from '../styles/homeStyles'
-import getCurrenUserService from '../services/getCurrentUserService'
 import auth from "../models/connection";
 
 export default class HomeScreen extends Component {
