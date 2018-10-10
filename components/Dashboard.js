@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import HeaderDashboard from './Header';
 import MenuScreen from './Menu';
 import { drawerStyles } from '../styles/drawerStyles';
-
+import 'firebase/auth';
 
 class DashboardScreen extends Component {
 
@@ -50,7 +50,6 @@ closeMenu = () => {
     }
   ).start()
 }
-
 
 componentWillReceiveProps(next_props){
   if(next_props.isLoggedOut == true){

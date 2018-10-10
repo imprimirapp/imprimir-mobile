@@ -1,25 +1,19 @@
 import { hosting } from '../config';
+import auth from "../models/connection";
 
 export default function logoutService(url){
 
     console.log('URL IN SAGA', url);
     
     return new Promise((resolve, reject) => {
-        return fetch(hosting+url,{
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+        auth.signOut().then(() => {
+            let logoutObj = {
+                status: 200,
+                message: 'SignOut succesfully / Sesión cerrada exitosamente'
             }
-        })
-        .then((response) => response.json())
-        .then((json) => {
-            console.log(json)
-            if(json.status === 200){
-                return resolve(json)
-            } else {
-                return reject(json);
-            }
-        })
+            resolve(logoutObj)
+        }).catch(err =>{
+            reject(err);
+        });
     });
 }

@@ -4,6 +4,7 @@ import { Button, Content } from 'native-base';
 import Carousel from 'react-native-carousel-view';
 import styles from '../styles/homeStyles'
 import getCurrenUserService from '../services/getCurrentUserService'
+import auth from "../models/connection";
 
 export default class HomeScreen extends Component {
 
@@ -15,16 +16,17 @@ export default class HomeScreen extends Component {
     super(props);
   }
 
-  componentWillMount(){
-
-    getCurrenUserService().then((data) =>{
-      console.log(data);
-      if(data){
-        this.props.navigation.push('Dashboard', {
-          userParam: data
+  componentDidMount(){
+    let myProps = this.props;
+    auth.onAuthStateChanged(function(user) {
+      if(user){
+        myProps.navigation.push('Dashboard', {
+          userParam: user
         })
+      }else{
+        console.log(user);
       }
-    }); 
+    });
   }
 
 
